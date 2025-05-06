@@ -46,3 +46,10 @@ document.addEventListener('keydown', (e) => {
         searchOverlay.style.display = 'none';
     }
 })
+
+//fechar o menu ao clicar fora
+searchOverlay.addEventListener('click', (e) => {
+    if (e.target === searchOverlay) {
+        searchOverlay.style.display = 'none';
+    }
+})
