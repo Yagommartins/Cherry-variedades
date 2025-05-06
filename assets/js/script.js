@@ -53,3 +53,27 @@ searchOverlay.addEventListener('click', (e) => {
         searchOverlay.style.display = 'none';
     }
 })
+
+//Galeria
+const imagens = document.querySelectorAll('.galeria img');
+const lightbox = document.getElementById('lightbox'); 
+const lightboxImg = document.getElementById('lightbox-img');
+
+imagens.forEach((img) => {
+    img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightbox.classList.add('show');
+    })
+})
+
+//esconder o lightbox ao clicar
+lightbox.addEventListener('click', () => {
+    lightbox.classList.remove('show');
+});
+
+// Fecha o lightbox ao pressionar a tecla Escape
+document.addEventListener('keydown', () => {
+    if (e.key === 'Escape') {
+        lightbox.classList.remove('show');
+    }
+})
