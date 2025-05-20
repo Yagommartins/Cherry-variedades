@@ -71,9 +71,30 @@ lightbox.addEventListener('click', () => {
     lightbox.classList.remove('show');
 });
 
-// Fecha o lightbox ao pressionar a tecla Escape
+//Fecha o lightbox ao pressionar a tecla Escape
 document.addEventListener('keydown', () => {
     if (e.key === 'Escape') {
         lightbox.classList.remove('show');
     }
+})
+
+//Abrir o login
+const openLoginBtn = document.getElementById('openLogin')
+const containerLogin = document.querySelector('.container-login')
+
+openLoginBtn.addEventListener('click', () => {
+containerLogin.classList.add('active')
+})
+
+//Fechar ao clicar fora do formulario ou pressionar ESC
+containerLogin.addEventListener('click', (e) => {
+if (e.target === containerLogin) {
+containerLogin.classList.remove('active')
+}
+})
+
+document.addEventListener('keydown', (e) => {
+if (e.key === 'Escape') {
+containerLogin.classList.remove('active')
+}
 })
